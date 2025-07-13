@@ -1,13 +1,19 @@
 import { useState } from "react";
-import "./App.css";
+import { Route, Routes } from "react-router-dom";
+import { Box } from "@chakra-ui/react";
+import HomePage from "./pages/HomePage";
+import Mindset from "./pages/MindsetPage";
+import NavBar from "./components/Navbar";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <>
-      <p>Hello</p>
-    </>
+    <Box minH={"100vh"}>
+      <NavBar />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/mindset" element={<Mindset />} />
+      </Routes>
+    </Box>
   );
 }
 
